@@ -53,16 +53,16 @@ public class kaku {
 					for(int i = 1; i <= 8; i++) {
 						String s = scanner.next();
 						col[i] = Integer.parseInt(s);
-					} 
+					}
 
 					FileWriter fileWriter = new FileWriter(new File("./formula.txt"));
 
 					for (y = 1 ; y <= 8 ; y++)
-						for (x = 1 ; x <= 8 ; x++) 
-							fileWriter.write("(declare-const a" + y + x + " Int)\n");    
+						for (x = 1 ; x <= 8 ; x++)
+							fileWriter.write("(declare-const a" + y + x + " Int)\n");
 
 					for (y = 1 ; y <= 8 ; y++)
-						for (x = 1 ; x <= 8 ; x++) 
+						for (x = 1 ; x <= 8 ; x++)
 							fileWriter.write("(assert (and (<= a" + y + x + " 1) (<= 0 a" + y + x + ")))\n");
 
 
@@ -82,7 +82,7 @@ public class kaku {
 
 					scanner.close();
 					fileWriter.close();
-					
+
 					Pattern pattern = Pattern.compile("(.+a(.)(.))(.+\\s+(.))");
 
 					ProcessBuilder builder = new ProcessBuilder("./z3","./formula.txt");
@@ -98,7 +98,10 @@ public class kaku {
 							while(matcher.find()) {
 								i = Integer.parseInt(matcher.group(2));
 								j = Integer.parseInt(matcher.group(3));
-								a[i-1][j-1] = matcher.group(5);
+								if(Integer.parseInt(matcher.group(5)) == 1) {
+									a[i-1][j-1] = "X";
+								}else
+									a[i-1][j-1] = "O";
 							}
 						}
 					}
@@ -119,7 +122,7 @@ public class kaku {
 						}
 						out.write("\n");
 					}
-					
+
 					out.close();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
@@ -165,7 +168,7 @@ public class kaku {
 					.desc("Help")
 					.build());
 
-			return options;	
+			return options;
 		}
 
 }
