@@ -45,14 +45,14 @@ public class MainWin {
 				int x=0;
 				int y=0;
 
-				//정의
+			
 				for (x = 1 ; x <= 9 ; x++){
 					for (y = 1 ; y <= 9 ; y++){
 						bw.write("(declare-const a"+x+y+" Int)\n") ;
 					}
 				}
 
-				//파일 읽기
+				
 				Scanner scanner = new Scanner(new File(input));
 				for(x=1 ; x<=9 ; x++){
 					for(y=1; y<=9 ; y++){
@@ -64,14 +64,14 @@ public class MainWin {
 					}
 				}
 
-				//모든 범위는 1~9 사이 이다.
+		
 				for (x = 1 ; x <= 9 ; x++){
 					for (y = 1 ; y <= 9 ; y++){
 						bw.write("(assert (and (<= a"+x+y+" 9) (<= 1 a"+x+y+")))\n") ;
 					}
 				}
 
-				//각 행은 서로 다른 수를 가진다.
+			
 				for (x = 1 ; x <= 9 ; x++){
 					bw.write("(assert (distinct");
 					for (y = 1 ; y <= 9 ; y++){
@@ -80,7 +80,7 @@ public class MainWin {
 					bw.write("))\n");
 				}
 
-				//각 열은 서로 다른 수를 가진다.
+			
 				for (x = 1 ; x <= 9 ; x++){
 					bw.write("(assert (distinct");
 					for (y = 1 ; y <= 9 ; y++){
@@ -89,7 +89,7 @@ public class MainWin {
 					bw.write("))\n");
 				}
 
-				//각 칸은 서로 다른 수를 가진다.
+			
 				for(x=1 ;x<=3 ; x++){
 					for(y=1 ; y<=3 ; y++){
 						bw.write("(assert (distinct");
@@ -137,7 +137,7 @@ public class MainWin {
 			FileWriter out;
 			try {
 				out = new FileWriter(".\\output.txt");
-				for(int s=0; s< 9; s++) { //input.txt의 row
+				for(int s=0; s< 9; s++) { 
 					for(int z = 0; z<9; z++) {//column
 						out.write(a[s][z]+" ");
 					}
