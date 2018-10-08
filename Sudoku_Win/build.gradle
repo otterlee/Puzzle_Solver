@@ -12,7 +12,7 @@ plugins {
 }
 
 apply plugin: 'application'
-mainClassName = "hgu.cs.discretemathematics.hw1.sudoku.Main"
+mainClassName = "hgu.cs.discretemathematics.hw1.sudoku.MainWin"
 
 dependencies {
     // This dependency is exported to consumers, that is to say found on their compile classpath.
