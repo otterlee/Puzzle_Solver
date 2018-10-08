@@ -105,11 +105,7 @@ public class Tree_In_A_Raw_win {
 				
 				Pattern pattern = Pattern.compile("(.+a(.)(.))(.+\\s+(.))");
 				
-<<<<<<< HEAD:3InARow_Win/src/main/java/hgu/cs/discretemathematics/hw1/tir/Tree_In_A_Raw_win.java
-				ProcessBuilder builder = new ProcessBuilder("./z3.exe","./formula.txt");
-=======
 				ProcessBuilder builder = new ProcessBuilder(".\\z3.exe","./formula.txt");
->>>>>>> 35410ecf9357f3618831abaa85da76b81cc6ddde:src/main/java/hgu/cs/discretemathematics/hw1/tir/Tree_In_A_Raw_win.java
 				Process p = builder.start();
 				p.waitFor();
 				BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
@@ -135,8 +131,7 @@ public class Tree_In_A_Raw_win {
 				e.printStackTrace();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
-			}
-			
+			}			
 			FileWriter out;
 			try {
 				out = new FileWriter(".\\output.txt");
