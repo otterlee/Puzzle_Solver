@@ -111,7 +111,7 @@ public class kakuWin {
 			FileWriter out;
 			try {
 				out = new FileWriter(".\\output.txt");
-				for(int s=0; s< 8; s++) { //input.txt의 row
+				for(int s=0; s< 8; s++) { 
 					for(int z = 0; z<8; z++) {//column
 						out.write(a[s][z]+" ");
 					}
