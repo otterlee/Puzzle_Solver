@@ -12,7 +12,7 @@ plugins {
 }
 
 apply plugin: 'application'
-mainClassName = "hgu.cs.discretemathematics.hw1.tir.Three_In_A_Row_win"
+mainClassName = "hgu.cs.discretemathematics.hw1.tir.Tree_In_A_Raw_win"
 
 dependencies {
     // This dependency is exported to consumers, that is to say found on their compile classpath.
